@@ -24,3 +24,20 @@ print("I see your name has " + new_num_char + " characters !")
 
 print(70 + float("123.4"))
 print(str(70) + str(30))
+
+#
+print(6 * 3)
+print(int(6 / 2))
+print(2 ** 3)
+
+# Order
+# PEMDAS
+# Parentheses
+# Exposant
+# Multiplication
+# Division
+# Addition
+# Soustraction
+
+print(3 * 3 + 3 / 3 - 3)
+print(3 * (3 + 3) / 3 - 3)
