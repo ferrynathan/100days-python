@@ -15,7 +15,9 @@ people = int(input("How many people to split the bill ?"))
 
 # calculate
 total_with_tip = total + (total * (tip / 100))
-total_with_tip_splitted = round(total_with_tip / people, 2)
+#total_with_tip_splitted = round(total_with_tip / people, 2)
+# Ici le formattage permet de mettre 2 décimales apres la virgule meme si la 2eme est à 0
+total_with_tip_splitted = "{:.2f}".format(total_with_tip / people)
 
 # print result
 print(
