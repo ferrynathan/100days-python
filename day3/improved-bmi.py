@@ -6,15 +6,15 @@ weight = input("enter your weight in kg: ")
 # Write your code below this line 👇
 
 bmi = float(weight) / float(height) ** 2
-print(round(bmi))
+rounded_bmi = round(bmi, 2)
 
 if bmi < 18.5:
-    print("You are underweight.")
+    print(f"Your bmi is {rounded_bmi}. You are underweight.")
 elif bmi < 25:
-    print("You are normal.")
+    print(f"Your bmi is {rounded_bmi}. You are normal.")
 elif bmi < 30:
-    print("You are overweight.")
+    print(f"Your bmi is {rounded_bmi}. You are overweight.")
 elif bmi < 35:
-    print("You are obese.")
+    print(f"Your bmi is {rounded_bmi}. You are obese.")
 else:
-    print("You are clinically obese")
+    print(f"Your bmi is {rounded_bmi}. You are clinically obese")
