@@ -27,7 +27,8 @@ print("Your mission is to find the treasure.")
 
 # Write your code below this line 👇
 
-direction = input("Do you want to go left or right ? ").lower()
+direction = input(
+    "Do you want to go left or right ? Type left or right: ").lower()
 if direction != "left":
     print("Game Over !")
 else:
