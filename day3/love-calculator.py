@@ -10,19 +10,19 @@ name_composed = (name1 + name2).lower()
 
 # Test for true
 
-t = int(name_composed.count('t'))
-r = int(name_composed.count('r'))
-u = int(name_composed.count('u'))
-e = int(name_composed.count('e'))
+t = name_composed.count('t')
+r = name_composed.count('r')
+u = name_composed.count('u')
+e = name_composed.count('e')
 
 true_score = t + r + u + e
 
 # Test for love
 
-l = int(name_composed.count('l'))
-o = int(name_composed.count('o'))
-v = int(name_composed.count('v'))
-e = int(name_composed.count('e'))
+l = name_composed.count('l')
+o = name_composed.count('o')
+v = name_composed.count('v')
+e = name_composed.count('e')
 
 love_score = l + o + v + e
 
