@@ -8,6 +8,8 @@ if taille >= 120:
         ticket = 7
     elif age < 18:
         ticket = 10
+    elif age >= 45 and age <= 50:
+        ticket = 0
     else:
         ticket = 12
     photo = input(
