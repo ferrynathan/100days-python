@@ -9,8 +9,8 @@ position = input("Where do you want to put the treasure? ")
 
 # Write your code below this row 👇
 
-column_number = int(list(position)[0])
-line_number = int(list(position)[1])
+column_number = int(position[0])
+line_number = int(position[1])
 
 if line_number >= 1 and line_number < 4:
     if column_number >= 1 and column_number < 4:
