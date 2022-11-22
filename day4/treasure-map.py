@@ -14,12 +14,7 @@ line_number = int(position[1])
 
 if line_number >= 1 and line_number < 4:
     if column_number >= 1 and column_number < 4:
-        if line_number == 1:
-            row1[column_number - 1] = 'X'
-        elif line_number == 2:
-            row2[column_number - 1] = 'X'
-        elif line_number == 3:
-            row3[column_number - 1] = 'X'
+        map[line_number - 1][column_number - 1] = 'X'
     else:
         print("Numéro de colonne incorrect!")
 else:
