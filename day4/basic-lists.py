@@ -4,4 +4,7 @@ print("the third state is " + america_states[2])
 print("the last state is " + america_states[-1])
 
 america_states[2] = "prout"
+
+america_states.append("new prout")
+america_states.extend(["Nathan Land", "Caroline Land"])
 print(america_states)
