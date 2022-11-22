@@ -7,3 +7,7 @@ print(names)
 print("Le nombre de prénom est " + str(len(names)))
 random_int = random.randint(0, len(names)-1)
 print(f"{names[random_int]} is going to buy the meal today!")
+
+# Alternative
+
+print(random.choice(names))
