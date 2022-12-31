@@ -1,99 +1,20 @@
-# Step 4
+# Step 5
 
 import random
+import hangman_words
+import hangman_art
 
-
-def lire_mots(nom_fichier):
-    """fonction qui récupère la liste des mots dans un fichier
-
-    paramètre
-      - nom_fichier, de type chaine de caractère : nom du fichier contenant les mots
-        (un par ligne)
-
-    retour : liste de chaine de caractères
-    """
-    liste_mots = []				# le tableau qui contiendra les lignes
-    f = open(nom_fichier, encoding="UTF-8")  # on ouvre le fichier
-    # une variable temporaire pour récupérer la ligne courante dans le fichier f
-    ligne = f.readline()
-    while ligne != "":
-        # on rajoute la ligne courante dans le tableau
-        liste_mots.append(ligne.strip())
-        ligne = f.readline()                # on récupère la ligne suivante
-    return liste_mots
-
-
-stages = [
-    '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-'''
-]
-
-end_of_game = False
-user_score = 7
-#word_list = ["ardvark", "baboon", "camel"]
-chosen_word = random.choice(lire_mots("littre.txt"))
-chosen_word = chosen_word.lower()
+# TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
+# Delete this line: word_list = ["ardvark", "baboon", "camel"]
+chosen_word = random.choice(hangman_words.word_list)
 word_length = len(chosen_word)
 
-# TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
-# Set 'lives' to equal 6.
+end_of_game = False
+lives = 6
 
+print(hangman_art.logo)
 # Testing code
-#print(f'Pssst, the solution is {chosen_word}.')
+print(f'Pssst, the solution is {chosen_word}.')
 
 # Create blanks
 display = []
@@ -104,33 +25,30 @@ print(display)
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
-    correct_guess = 0
+    if guess in display:
+        print("Letter already guessed")
+
     # Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
-            correct_guess += 1
-    if correct_guess == 0:
-        user_score -= 1
-        print(f"User score = {user_score}")
-        print(stages[user_score])
 
-    # TODO-2: - If guess is not a letter in the chosen_word,
-    # Then reduce 'lives' by 1.
-    # If lives goes down to 0 then the game should stop and it should print "You lose."
+    # Check if user is wrong.
+    if guess not in chosen_word:
+        print(f"{guess} is not in the word !")
+        print(hangman_art.stages[lives])
+        # TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print("You lose.")
 
     # Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
 
     # Check if user has got all letters.
-    if user_score == 0:
-        end_of_game = True
-        print("You lose.")
-        print(f"The word was {chosen_word}")
     if "_" not in display:
         end_of_game = True
         print("You win.")
-
-    # TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
