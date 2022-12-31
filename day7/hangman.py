@@ -2,6 +2,30 @@
 
 import random
 
+
+def lire_mots(nom_fichier):
+    """fonction qui récupère la liste des mots dans un fichier
+
+    paramètre
+      - nom_fichier, de type chaine de caractère : nom du fichier contenant les mots
+        (un par ligne)
+
+    retour : liste de chaine de caractères
+    """
+    liste_mots = []				# le tableau qui contiendra les lignes
+    f = open(nom_fichier, encoding="UTF-8")  # on ouvre le fichier
+    # une variable temporaire pour récupérer la ligne courante dans le fichier f
+    ligne = f.readline()
+    while ligne != "":
+        # on rajoute la ligne courante dans le tableau
+        liste_mots.append(ligne.strip())
+        ligne = f.readline()                # on récupère la ligne suivante
+    return liste_mots
+
+
+liste_mots = lire_mots("littre.txt")
+print(lire_mots)
+
 stages = [
     '''
   +---+
