@@ -23,9 +23,6 @@ def lire_mots(nom_fichier):
     return liste_mots
 
 
-liste_mots = lire_mots("littre.txt")
-print(lire_mots)
-
 stages = [
     '''
   +---+
@@ -87,8 +84,9 @@ stages = [
 
 end_of_game = False
 user_score = 7
-word_list = ["ardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
+#word_list = ["ardvark", "baboon", "camel"]
+chosen_word = random.choice(lire_mots("littre.txt"))
+chosen_word = chosen_word.lower()
 word_length = len(chosen_word)
 
 # TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
