@@ -71,12 +71,14 @@ word_length = len(chosen_word)
 # Set 'lives' to equal 6.
 
 # Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+#print(f'Pssst, the solution is {chosen_word}.')
 
 # Create blanks
 display = []
 for _ in range(word_length):
     display += "_"
+
+print(display)
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
