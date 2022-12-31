@@ -2,7 +2,7 @@
 
 import random
 import hangman_words
-import hangman_art
+from hangman_art import logo, stages
 
 # TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 # Delete this line: word_list = ["ardvark", "baboon", "camel"]
@@ -12,7 +12,7 @@ word_length = len(chosen_word)
 end_of_game = False
 lives = 6
 
-print(hangman_art.logo)
+print(logo)
 # Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
@@ -38,7 +38,7 @@ while not end_of_game:
     # Check if user is wrong.
     if guess not in chosen_word:
         print(f"{guess} is not in the word !")
-        print(hangman_art.stages[lives])
+        print(stages[lives])
         # TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
         lives -= 1
         if lives == 0:
