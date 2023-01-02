@@ -17,3 +17,15 @@ def greet_with_input(name):
 
 
 greet_with_input("Nathan")
+
+
+def greet_with_2_inputs(name, location):
+    print(f"Hello {name}!")
+    print(f"What are you doing in {location}?")
+
+
+# positional arguments
+greet_with_2_inputs("Nathan", "Bordeaux")
+
+# keywords arguments
+greet_with_2_inputs(location="Bordeaux", name="Nathan")
