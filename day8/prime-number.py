@@ -3,9 +3,9 @@
 def prime_checker(number):
     for divider in range(2, number):
         if number % divider == 0:
-            print("This is not a prime number.")
+            print("It's not a prime number.")
             exit()
-    print("This is a prime number.")
+    print("It's a prime number.")
 
 
 # Write your code above this line 👆
